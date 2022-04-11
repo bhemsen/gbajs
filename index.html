@@ -1,8 +1,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <title>GBA.js</title>
 <link rel="stylesheet" href="resources/main.css">
+
 <script src="js/util.js"></script>
 <script src="js/core.js"></script>
 <script src="js/arm.js"></script>
@@ -73,6 +75,119 @@ window.onload = function() {
 		var dead = document.getElementById('controls');
 		dead.parentElement.removeChild(dead);
 	}
+
+	const up = document.querySelector('.up');
+	const right = document.querySelector('.right');
+	const down = document.querySelector('.down');
+	const left = document.querySelector('.left');
+
+	const a = document.querySelector('.a');
+	const b = document.querySelector('.b');
+	const start = document.querySelector('.start');
+	const select = document.querySelector('.select');
+
+
+	up.addEventListener('touchstart', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keydown', {key: 'up', keyCode:38}));
+		console.log('up',e.target);
+	});
+
+	right.addEventListener('touchstart', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'right', keyCode:39}));
+		console.log('right',e.target);
+
+	});
+
+	down.addEventListener('touchstart', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'down', keyCode:40}));
+		console.log('down',e.target);
+
+	});
+
+	left.addEventListener('touchstart', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'left', keyCode:37}));
+		console.log('left',e.target);
+
+	});
+
+	a.addEventListener('touchstart', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'z', keyCode:90}));
+		console.log('left',e.target);
+
+	});
+
+	b.addEventListener('touchstart', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'x', keyCode:88}));
+		console.log('left',e.target);
+
+	});
+
+	start.addEventListener('touchstart', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'enter', keyCode:13}));
+		console.log('left',e.target);
+
+	});
+
+	select.addEventListener('touchstart', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'back slash', keyCode:220}));
+		console.log('left',e.target);
+
+	});
+
+	window.addEventListener('touchstart', (e)=> {
+		console.log(e);
+	})
+	up.addEventListener('touchend', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keyup', {key: 'up', keyCode:38}));
+		console.log('up',e.target);
+	});
+
+	right.addEventListener('touchend', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'right', keyCode:39}));
+		console.log('right',e.target);
+
+	});
+
+	down.addEventListener('touchend', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'down', keyCode:40}));
+		console.log('down',e.target);
+
+	});
+
+	left.addEventListener('touchend', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'left', keyCode:37}));
+		console.log('left',e.target);
+
+	});
+
+	a.addEventListener('touchend', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'z', keyCode:90}));
+		console.log('left',e.target);
+
+	});
+
+	b.addEventListener('touchend', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'x', keyCode:88}));
+		console.log('left',e.target);
+
+	});
+
+	start.addEventListener('touchend', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'enter', keyCode:13}));
+		console.log('left',e.target);
+
+	});
+
+	select.addEventListener('touchend', (e)=> {
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'back slash', keyCode:220}));
+		console.log('left',e.target);
+
+	});
+
+	window.addEventListener('touchend', (e) => {
+		console.log('touchend',e);
+	})
+
 }
 
 function fadeOut(id, nextId, kill) {
@@ -282,6 +397,7 @@ document.addEventListener('webkitfullscreenchange', function() {
 		canvas.removeAttribute('style');
 	}
 }, false);
+
 </script>
 </head>
 <body>
@@ -310,6 +426,22 @@ document.addEventListener('webkitfullscreenchange', function() {
 		<p id="openDebug" onclick="enableDebug()">Debugger</p>
 	</div>
 </section>
+
+<section class="gamecontrols">
+	<div class="cross">
+		<button class="cross__btn up"><</button>
+		<button class="cross__btn right">></button>
+		<button class="cross__btn down"><</button>
+		<button class="cross__btn left"><</button>
+	</div>
+	<div class="buttons">
+		<button class="buttons__btn start">Start</button>
+		<button class="buttons__btn select">Select</button>
+		<button class="buttons__btn a">A</button>
+		<button class="buttons__btn b">B</button>
+	</div>
+</section>
+
 <ul id="links">
 	<li><a href="http://github.com/endrift/gbajs/">Fork me on GitHub!</a></li>
 	<li><a href="https://github.com/endrift/gbajs/wiki/Compatibility-List">Compatibility list</a></li>

@@ -1,3 +1,13 @@
+:root {
+	--pink: #FAD1D9;
+	--blue: #C5F6FF;
+	--stroke: #522438; 
+	--green: #C2E688;
+	--red: #FC6963;
+	--light-brow: #846662;
+	--gray: #9EA1AF;
+   }
+
 body {
 	background: url('bg.png') no-repeat top center, -webkit-linear-gradient(#765490 560px, #6A4883 620px, #433061 900px);
 	background: url('bg.png') no-repeat top center, -moz-linear-gradient(#765490 560px, #6A4883 620px, #433061 900px, #433061);
@@ -7,6 +17,14 @@ body {
 	font-family: 'Calibri', 'Verdana', sans-serif;
 	font-size: 15px;
 	text-shadow: 0 2px rgba(0, 0, 0, 0.6);
+	overflow: hidden;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 button {
@@ -188,4 +206,109 @@ ul#links li {
 ul#links li:not(:first-child)::before {
 	content: "•";
 	margin: 0 0.5em;
+}
+
+.gamecontrols {
+	display: flex;
+	width: 100%;
+}
+
+.cross {
+	width: 50%;
+	height: 100px;
+	position: relative;
+}
+
+.buttons {
+	width: 50%;
+	height: 100px;
+	position: relative;
+}
+
+.cross__btn, .buttons__btn {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	background-color: var(--red);
+	border: 6px solid var(--stroke);
+	padding: 0;
+    box-shadow: 1px 5px 1px grey;	margin: 0 5px;
+	transition: .1s ;
+}
+
+.cross__btn:active, .buttons__btn:active {
+    box-shadow: none;
+}
+
+.up, .start {
+	top: 0;
+	left: 50%;
+    transform: rotate(90deg) translateX(-50%);
+}
+
+.left, .select {
+	left: 35%;
+	top: 10%;
+}
+
+.right, .a {
+	left: 65%;
+	top: 10%;
+
+}
+
+.down , .b {
+	bottom: -30%;
+	left: 50%;
+    transform: rotate(-90deg);
+}
+
+.buttons .b {
+	transform: rotate(0);
+}
+
+.buttons .start {
+	transform: rotate(0) translateY(-50%);
+}
+
+
+
+@media (min-width: 756px) {
+	body {
+		position: relative;
+	}
+
+	.gamecontrols {
+		position: absolute;
+		top: 25%;
+		justify-content: space-between;
+	}
+
+	.cross, .buttons {
+		width: 25%;
+	}
+
+	
+.up, .start {
+	left: 40%;
+}
+
+.left, .select {
+	left: 10%;
+}
+
+.right, .a {
+	left: 65%;
+}
+
+.down , .b {
+	bottom: -30%;
+	left: 40%;
+}
+
+
 }
