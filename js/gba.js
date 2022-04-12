@@ -78,13 +78,14 @@ GameBoyAdvance.prototype.setCanvas = function(canvas) {
 	var self = this;
 	if (canvas.offsetWidth != 240 || canvas.offsetHeight != 160) {
 		this.indirectCanvas = document.createElement("canvas");
-		this.indirectCanvas.setAttribute("height", "160");
-		this.indirectCanvas.setAttribute("width", "240");
+		this.indirectCanvas.setAttribute("height", "320");
+		this.indirectCanvas.setAttribute("width", "480");
 		this.targetCanvas = canvas;
 		this.setCanvasDirect(this.indirectCanvas);
 		var targetContext = canvas.getContext('2d');
 		this.video.drawCallback = function() {
-			targetContext.drawImage(self.indirectCanvas, 0, 0, canvas.offsetWidth, canvas.offsetHeight);
+			console.log(canvas, canvas.offsetWidth, canvas.offsetHeight);
+			targetContext.drawImage(self.indirectCanvas, 0, 0, 600, 300);
 		}
 	} else {
 		this.setCanvasDirect(canvas);
