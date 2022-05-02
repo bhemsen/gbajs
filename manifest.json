@@ -1,0 +1,21 @@
+{
+  "name": "GameBoy Advance",
+  "short_name": "GBA",
+  "description": "THis is a Gameboy Advance Emulator",
+  "icons": [
+    {
+      "src": "images/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "images/180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#B12A34",
+  "background_color": "#B12A34"
+}
