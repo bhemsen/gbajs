@@ -274,3 +274,9 @@ ul#links li:not(:first-child)::before {
 		top: -50px;
 	}
 }
+
+@media (min-width: 992px) {
+	.gamecontrols {
+		display: none;
+	}
+}

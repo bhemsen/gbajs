@@ -145,7 +145,7 @@ window.onload = function() {
 	});
 
 	a.addEventListener('touchstart', (e)=> {
-		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'z', keyCode:90}));
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'z', keyCode:89}));
 		toggleClass(a,'active');
 	});
 
@@ -160,7 +160,7 @@ window.onload = function() {
 	});
 
 	select.addEventListener('touchstart', (e)=> {
-		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'back slash', keyCode:220}));
+		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'back slash', keyCode:8}));
 		toggleClass(select,'active');
 	});
 
@@ -185,7 +185,7 @@ window.onload = function() {
 	});
 
 	a.addEventListener('touchend', (e)=> {
-		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'z', keyCode:90}));
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'z', keyCode:89}));
 		toggleClass(a,'active');
 	});
 
@@ -200,7 +200,7 @@ window.onload = function() {
 	});
 
 	select.addEventListener('touchend', (e)=> {
-		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'back slash', keyCode:220}));
+		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'back slash', keyCode:8}));
 		toggleClass(select,'active');
 	});
 
@@ -468,6 +468,30 @@ document.addEventListener('webkitfullscreenchange', function() {
 		<span class="btn__wrapper select"><button class="buttons__btn">Select</button></span>
 		<span class="btn__wrapper a"><button class="buttons__btn">A</button></span>
 		<span class="btn__wrapper b"><button class="buttons__btn">B</button></span>		
+	</div>
+</section>
+
+<section class="d-none d-lg-block">
+	<div class="container">
+		<h2>Tastatur Mapping</h2>
+		<table class="table table-dark">
+			<tr>
+				<td>A</td>
+				<td>B</td>
+				<td>L</td>
+				<td>R</td>
+				<td>Start</td>
+				<td>Select</td>
+			</tr>
+			<tr>
+				<td>Y</td>
+				<td>X</td>
+				<td>A</td>
+				<td>S</td>
+				<td>Enter</td>
+				<td>Back</td>
+			</tr>
+		</table>
 	</div>
 </section>
 
