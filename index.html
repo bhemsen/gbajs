@@ -116,99 +116,94 @@ window.onload = function() {
 	const select = document.querySelector('.select');
 
 
+	function toggleClass(elem, className) {
+		if (elem.classList.contains(className)) {
+			elem.classList.remove(className)
+			return
+		}
+		elem.classList.add(className)
+	}
+
 	up.addEventListener('touchstart', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keydown', {key: 'up', keyCode:38}));
-		console.log('up',e.target);
+		toggleClass(up,'active');
 	});
 
 	right.addEventListener('touchstart', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'right', keyCode:39}));
-		console.log('right',e.target);
-
+		toggleClass(right,'active');
 	});
 
 	down.addEventListener('touchstart', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'down', keyCode:40}));
-		console.log('down',e.target);
-
+		toggleClass(down,'active');
 	});
 
 	left.addEventListener('touchstart', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'left', keyCode:37}));
-		console.log('left',e.target);
-
+		toggleClass(left,'active');
 	});
 
 	a.addEventListener('touchstart', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'z', keyCode:90}));
-		console.log('left',e.target);
-
+		toggleClass(a,'active');
 	});
 
 	b.addEventListener('touchstart', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'x', keyCode:88}));
-		console.log('left',e.target);
-
+		toggleClass(b,'active');
 	});
 
 	start.addEventListener('touchstart', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'enter', keyCode:13}));
-		console.log('left',e.target);
-
+		toggleClass(start,'active');
 	});
 
 	select.addEventListener('touchstart', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keydown', {'key': 'back slash', keyCode:220}));
-		console.log('left',e.target);
-
+		toggleClass(select,'active');
 	});
 
 	up.addEventListener('touchend', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keyup', {key: 'up', keyCode:38}));
-		console.log('up',e.target);
+		toggleClass(up,'active');
 	});
 
 	right.addEventListener('touchend', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'right', keyCode:39}));
-		console.log('right',e.target);
-
+		toggleClass(right,'active');
 	});
 
 	down.addEventListener('touchend', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'down', keyCode:40}));
-		console.log('down',e.target);
-
+		toggleClass(down,'active');
 	});
 
 	left.addEventListener('touchend', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'left', keyCode:37}));
-		console.log('left',e.target);
-
+		toggleClass(left,'active');
 	});
 
 	a.addEventListener('touchend', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'z', keyCode:90}));
-		console.log('left',e.target);
-
+		toggleClass(a,'active');
 	});
 
 	b.addEventListener('touchend', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'x', keyCode:88}));
-		console.log('left',e.target);
-
+		toggleClass(b,'active');
 	});
 
 	start.addEventListener('touchend', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'enter', keyCode:13}));
-		console.log('left',e.target);
-
+		toggleClass(start,'active');
 	});
 
 	select.addEventListener('touchend', (e)=> {
 		window.dispatchEvent(new KeyboardEvent('keyup', {'key': 'back slash', keyCode:220}));
-		console.log('left',e.target);
-
+		toggleClass(select,'active');
 	});
+
 }
 
 function fadeOut(id, nextId, kill) {

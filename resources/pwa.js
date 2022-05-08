@@ -23,10 +23,20 @@ closeButton.addEventListener('click', ()=>{
     installerBanner.classList.remove('fade-in');
 })
 
+ if ('getInstalledRelatedApps' in window.navigator) {
+    navigator.getInstalledRelatedApps().then(response => {
+        const relatedApps = response;
+        console.log(response)
+        relatedApps.forEach((app) => {
+            //if your PWA exists in the array it is installed
+            console.log(app.platform, app.url);
+          });
+    })
 
-
+  }
 
 window.addEventListener('beforeinstallprompt', (e) => {
+    console.log(e);
     let promt = e;
 
     installerBanner.classList.add('fade-in');

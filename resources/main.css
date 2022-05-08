@@ -187,13 +187,9 @@ ul#links li:not(:first-child)::before {
 	box-sizing: border-box;
 }
 
-.cross__btn:active, .buttons__btn:active {
-	transform: translateY(3px);
-	box-shadow: none;
-}
-
-.cross__btn:active, .buttons__btn:active {
+.active button {
     box-shadow: none;
+    transform: translateY(3px);
 }
 
 .up, .start {
@@ -225,10 +221,10 @@ ul#links li:not(:first-child)::before {
     position: relative;
 }
 .installbanner {
-    background-color:red;
+    background-color:lightcoral;
     width: 100%;
     text-align: center;
-    position: sticky;
+    position: absolute;
     bottom: -100px;
     transition: .7s;
     display: none;
@@ -245,10 +241,6 @@ ul#links li:not(:first-child)::before {
 }
 
 @media (min-width: 600px) {
-	body {
-		position: relative;
-	}
-
 	.gamecontrols {
 		display: flex;
 		position: absolute;

@@ -17,5 +17,9 @@
   "start_url": "/index.html",
   "display": "standalone",
   "theme_color": "#B12A34",
-  "background_color": "#B12A34"
+  "background_color": "#B12A34",
+  "related_applications": [{
+    "platform": "GBA",
+    "url": "https://www.bhemsen.de/manifest.json"
+  }]
 }
